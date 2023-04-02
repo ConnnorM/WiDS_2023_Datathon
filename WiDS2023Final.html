@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.189">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Olivia Armstrong &amp; Connor Martindale">
+
+<title>Final Report</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="WiDS2023Final_files/libs/clipboard/clipboard.min.js"></script>
+<script src="WiDS2023Final_files/libs/quarto-html/quarto.js"></script>
+<script src="WiDS2023Final_files/libs/quarto-html/popper.min.js"></script>
+<script src="WiDS2023Final_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="WiDS2023Final_files/libs/quarto-html/anchor.min.js"></script>
+<link href="WiDS2023Final_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="WiDS2023Final_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="WiDS2023Final_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="WiDS2023Final_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="WiDS2023Final_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#data-overview" id="toc-data-overview" class="nav-link" data-scroll-target="#data-overview">Data: Overview</a></li>
+  <li><a href="#data-cleaning" id="toc-data-cleaning" class="nav-link" data-scroll-target="#data-cleaning">Data: Cleaning</a></li>
+  <li><a href="#modeling-baseline-lasso-model" id="toc-modeling-baseline-lasso-model" class="nav-link" data-scroll-target="#modeling-baseline-lasso-model">Modeling: Baseline Lasso Model</a></li>
+  <li><a href="#modeling-random-forest" id="toc-modeling-random-forest" class="nav-link" data-scroll-target="#modeling-random-forest">Modeling: Random Forest</a></li>
+  <li><a href="#modeling-pca-and-lasso-regression" id="toc-modeling-pca-and-lasso-regression" class="nav-link" data-scroll-target="#modeling-pca-and-lasso-regression">Modeling: PCA and Lasso Regression</a></li>
+  <li><a href="#modeling-xgboost-model" id="toc-modeling-xgboost-model" class="nav-link" data-scroll-target="#modeling-xgboost-model">Modeling: XGBoost Model</a></li>
+  <li><a href="#improvements" id="toc-improvements" class="nav-link" data-scroll-target="#improvements">Improvements</a></li>
+  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations">Limitations</a></li>
+  <li><a href="#kaggle-submission" id="toc-kaggle-submission" class="nav-link" data-scroll-target="#kaggle-submission">Kaggle Submission</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Final Report</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Olivia Armstrong &amp; Connor Martindale </p>
+          </div>
+  </div>
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>Extreme weather events can have disastrous effects on numerous aspects of our planet. From tropical storms to wildfires, these events are sweeping across the globe in an alarmingly frequent fashion. With this inevitable threat, it becomes increasingly important to examine these trends so that proper preparation can be taken. While there are current models that exist to help predict weather conditions, these models have a limited forecast horizon. With the increased availability of meteorological data, we can utilize machine learning techniques to help improve these weather forecasts. These longer weather forecasts can help effectively prepare communities for various weather conditions.</p>
+<p>The dataset provided for this competition was created in collaboration with Climate Change AI (CCAI). Provided was pre-prepared training data, testing data, and a sample solution. Each row in the data corresponds to a single location and a single start date for a two-week period. Additionally, weather and climate related information was included in these rows. The task at hand was to predict the arithmetic mean of the maximum and minimum temperature over the next 14 days, for each location and start date.</p>
+</section>
+<section id="data-overview" class="level1">
+<h1>Data: Overview</h1>
+<p>The dataset was given as a separate training and testing set. The training set contains 103,659 entries with 246 features per entry. The testing set has 31,354 entries with 245 features as the values of the target variable that we are predicting are not included in the testing set.</p>
+<p>Within the dataset are weather readings for 575 different locations within the United States. The features in the dataset represent average readings taken from weather instruments in these unique locations over a two week period. Each location in the training set had data from multiple different periods spanning from September 1, 2014 to August 31, 2016. The testing set contains data from November 1, 2022 to December 31, 2022.</p>
+<p>Our target variable is [contest-tmp2m-14d__tmp2m], and it represents the mean value of the maximum and minimum values for the observed temperatures during each two week period for each location. Therefore, we are using various readings from weather-related instruments in order to predict the average temperature in an area during a two week period.</p>
+<p>The key variables for understanding the dataset are [lat], [lon], [startdate], [climateregion__climateregion], and the target variable. Location data is given by the [lat] and [lon] features (the latitude and longitude of the area). The [startdate] feature represents the first day of the two week period. Lastly, [climateregion__climateregion] contains a 3 letter label for 14 different climate regions. The remaining variables in the dataset are continuous, numerical features from the weather instruments.</p>
+</section>
+<section id="data-cleaning" class="level1">
+<h1>Data: Cleaning</h1>
+<p>After checking the data types of all of the features, we noted that our first step would be to convert all variables to a usable data type.</p>
+<p>First, we converted the [startdate] feature to 3 separate variables ([day], [month], and [year]) to allow the model to distinguish more clearly between the date information.</p>
+<p>From our exploration of the datasets, we learned that the testing set only covers the months of November and December, while the training set covers two full years. Therefore, we determined that we should create an additional variable representing the season using the entry’s month so that we could train the model using only the data from the same season (winter) as in the testing set.</p>
+<p>Next, we used the latitude and longitude variables to create a new variable that would provide a numerical label to each unique location within the dataset.</p>
+<p>We then converted the [season] and [year] variables to dummy variables of a numerical format and changed them to be boolean variables.</p>
+<p>Having finished creating additional variables and changing data types, we then dropped all of the rows with missing data values within the data set.</p>
+<p>Lastly, we Z-scored all of the numerical data to provide the model with a more standardized version of the data.</p>
+</section>
+<section id="modeling-baseline-lasso-model" class="level1">
+<h1>Modeling: Baseline Lasso Model</h1>
+<p>In order to provide a baseline assessment to compare against our more complex model, we created a Lasso regression model. We chose to use Lasso regression because of its ability to eliminate the features in the dataset that it deems are least important. By doing so, Lasso provides us with some limited regularization for our model without us having to manually tune the model.</p>
+<p>Our first attempt with the Lasso model provided a training set RMSE score of 2.513 (with RMSE as our evaluation method, lower numbers represent improved performance). However, our testing set RMSE was 12.986, which showed us that the model was extremely overfit to the training set as the training predictions were far more accurate than the testing predictions.</p>
+<p>Next, we removed all of the date-related information from the dataset and ran the Lasso model again. The overall performance of the model decreased, and the overfitting problem remained, however.</p>
+<p>Our next step was to run the model without any location-based data. At this stage in our process, we were attempting to discover the source of our overfitting problem by removing certain variables and rerunning the model. After removing the labels for each unique location (a variable that we created), the model was no longer severely overfit.</p>
+<p>Having eliminated our overfitting problem, we could then test our aforementioned hypothesis: since the testing data only contains data from the months of November and December, the model might perform better when it has only been trained on data from Autumn and Winter months (or only on data from November and December).</p>
+<p>First, we filtered the dataset so that only the data taken during Autumn and Winter remained. Unfortunately, the model became extremely overfit. When testing with only data from November and December, the model was still overfit to the training set as the training RMSE was 3.149 and the testing RMSE was 7.008, showing that the model was performing significantly better on the training set.</p>
+<p>Therefore, the conclusion that we learned from our baseline Lasso model was that we should revert some of the data cleaning and manipulation in order to prevent overfitting.</p>
+<p>The final version of the dataset that we used merely had dummy variables created for the climate regions, and the [startdate] variable was split into three separate variables (day/month/year). Missing values in the dataset were dropped.</p>
+<p>When testing our Lasso model with this final iteration of the dataset, we received the best results so far: our training RMSE was 1.160 and our testing RMSE was 1.611.</p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Load the train and test sets</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>train <span class="op">=</span> pd.read_csv(<span class="st">'train_data.csv'</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>test <span class="op">=</span> pd.read_csv(<span class="st">'test_data.csv'</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>train <span class="op">=</span> pd.get_dummies(train, columns <span class="op">=</span> [<span class="st">'climateregions__climateregion'</span>], drop_first <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>test <span class="op">=</span> pd.get_dummies(test, columns <span class="op">=</span> [<span class="st">'climateregions__climateregion'</span>], drop_first <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#Convert startdate variable to a useable type: new columns for day, month, year</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>train.startdate <span class="op">=</span> pd.to_datetime(train.startdate)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>train[<span class="st">'day'</span>] <span class="op">=</span> train.startdate.dt.day</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>train[<span class="st">'month'</span>] <span class="op">=</span> train.startdate.dt.month</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>train[<span class="st">'year'</span>] <span class="op">=</span> train.startdate.dt.year</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>train <span class="op">=</span> train.drop([<span class="st">'startdate'</span>], axis <span class="op">=</span> <span class="dv">1</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>test.startdate <span class="op">=</span> pd.to_datetime(test.startdate)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>test[<span class="st">'day'</span>] <span class="op">=</span> test.startdate.dt.day</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>test[<span class="st">'month'</span>] <span class="op">=</span> test.startdate.dt.month</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>test[<span class="st">'year'</span>] <span class="op">=</span> test.startdate.dt.year</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>test <span class="op">=</span> test.drop([<span class="st">'startdate'</span>], axis <span class="op">=</span> <span class="dv">1</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">#get rid of null values</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>train.dropna(inplace <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co">#split up training predictors and target values</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>X_train <span class="op">=</span> train.loc[:, train.columns <span class="op">!=</span> <span class="st">'contest-tmp2m-14d__tmp2m'</span>]</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>y_train <span class="op">=</span> train[<span class="st">'contest-tmp2m-14d__tmp2m'</span>]</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co">#testing data rename</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>X_test <span class="op">=</span> test</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co">#exclude object types since regression can't handle them (if any remain)</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>X_train <span class="op">=</span> X_train.select_dtypes(exclude<span class="op">=</span>[<span class="st">'object'</span>])</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>X_test <span class="op">=</span> X_test.select_dtypes(exclude<span class="op">=</span>[<span class="st">'object'</span>])</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>lasso6 <span class="op">=</span> Lasso()</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>lasso6.fit(X_train, y_train)</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"TRAIN RMSE: "</span>, mean_squared_error(y_train, lasso6.predict(X_train), squared <span class="op">=</span> <span class="va">False</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>With our baseline model finalized, we could now move on to creating more complex models in an attempt to surpass the Lasso regression model’s performance.</p>
+</section>
+<section id="modeling-random-forest" class="level1">
+<h1>Modeling: Random Forest</h1>
+<pre><code>To begin, we chose to use a Random Forest model to compare against our Lasso regression. Random Forest models utilize multiple variations of a single model in order to create an average that is used to make predictions. Therefore, this type of model is well-suited for reducing the tendency for machine learning models to overfit to the training set.</code></pre>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>randForest <span class="op">=</span> RandomForestRegressor(max_depth <span class="op">=</span> <span class="dv">5</span>, random_state <span class="op">=</span> <span class="dv">0</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>randForest.fit(X_train, y_train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<pre><code>Our model created 100 different Decision Trees, each with a maximum depth of 5 levels (each tree would make up to 5 decisions). The training RMSE of the Random Forest was 2.410, and the testing RMSE was 2.459, showing that, while the model was not overfit, the model failed to outperform our Lasso Regression.</code></pre>
+</section>
+<section id="modeling-pca-and-lasso-regression" class="level1">
+<h1>Modeling: PCA and Lasso Regression</h1>
+<pre><code>Since it appeared that our Lasso Regression model was more accurate than we had realized, we decided to use Principal Components Analysis in an attempt to improve our Lasso model. The benefit of using PCA is that this technique will combine like variables and their influences on the model into Principal Components, thus lowering the total number of features used in a model. This technique is useful for combatting overfitting and distilling the important information found in a large data set.
+
+Our PCA created 41 principal components that could explain 90% of the variance in the data, effectively lowering the number of features in the dataset from 260 to 41. When we used this altered version of the data set with a Lasso regression model, the model had a training RMSE of 2.598 and a testing RMSE of 2.026. Using PCA in conjunciton with Lasso regression ultimatley lowered the effectiveness of the model as less data was being used to create the predicitons.
+
+Since both PCA and Lasso regression are used to reduce overfitting (as they are both regularization techniques) at the potential cost of lowering the overall accuracy of the model, we now realize that it may have been unwise to use both techniques together. Therefore, in a future test, we will use a different model in tandem with the Principal Components Analysis.</code></pre>
+</section>
+<section id="modeling-xgboost-model" class="level1">
+<h1>Modeling: XGBoost Model</h1>
+<pre><code> For our modeling, we decided to utilize XGBoost. XGBoost has various benefits that make it ideal for the data science problem at hand. One of which includes that it is able to handle large datasets efficiently as it can automatically perform parallel computation, meaning many calculations are carried out at the same time.
+
+
+Additionally, the numerous hyperparameter options allow the opportunity to further improve model performance through the process of tuning. Furthermore, XGBoost implements the gradient boosting algorithm. To summarize, this algorithm works by adding new models to correct errors made in pre-existing models. The final prediction is the average of all the models predictions, making it ideal for regression problems like the one at hand. 
+
+
+When researching how to implement this model, the high number of customizable hyperparameters made it evident that a tuning technique would be necessary to find the most optimal values. At first, we explored simulated annealing. Simulated annealing finds the most optimal parameters in a model by finding the global optima of a function, simulating thermodynamics. Simulated annealing has the benefit of being very effective in the world of machine learning. However, after exploring this option we quickly realized it would not be an ideal choice as there is no package for it and instead the algorithm would have to be implemented by hand. Other options for hyperparameter optimization include GridSearch and RandomizedSearchCV. 
+
+
+Ultimately, we ended up choosing to utilize RandomizedSearchCV. This method works by randomly passing the set of hyperparameters, calculating the score, and then outputting the set of hyperparameters that have the best score. RandomizedSearchCV has several parameters including the parameter distributions and number of iterations. The parameter distribution is the dictionary of parameters that are being optimized. For our XGBoost model, we choose to optimize the max_depth, subsample, colsample_bytree, learning_rate, gamma, and scale_pos_weight. As overfitting was a big concern for our model, optimizing these important parameters could help mitigate this. </code></pre>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameter Dictionary</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>param_dict <span class="op">=</span> OrderedDict()</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>param_dict[<span class="st">'max_depth'</span>] <span class="op">=</span> [<span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">20</span>, <span class="dv">25</span>]</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>param_dict[<span class="st">'subsample'</span>] <span class="op">=</span> [<span class="fl">0.5</span>, <span class="fl">0.6</span>, <span class="fl">0.7</span>, <span class="fl">0.8</span>, <span class="fl">0.9</span>, <span class="fl">1.0</span>]</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>param_dict[<span class="st">'colsample_bytree'</span>] <span class="op">=</span> [<span class="fl">0.5</span>, <span class="fl">0.6</span>, <span class="fl">0.7</span>, <span class="fl">0.8</span>, <span class="fl">0.9</span>, <span class="fl">1.0</span>]</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>param_dict[<span class="st">'learning_rate'</span>] <span class="op">=</span> [<span class="fl">0.01</span>, <span class="fl">0.05</span>, <span class="fl">0.10</span>, <span class="fl">0.20</span>, <span class="fl">0.30</span>, <span class="fl">0.40</span>]</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>param_dict[<span class="st">'gamma'</span>] <span class="op">=</span> [<span class="fl">0.00</span>, <span class="fl">0.05</span>, <span class="fl">0.10</span>, <span class="fl">0.15</span>, <span class="fl">0.20</span>]</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>param_dict[<span class="st">'scale_pos_weight'</span>] <span class="op">=</span> [<span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">300</span>, <span class="dv">400</span>, <span class="dv">500</span>, <span class="dv">600</span>, <span class="dv">700</span>]</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Model Building</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>rs_model<span class="op">=</span>RandomizedSearchCV(classifier,param_distributions<span class="op">=</span>param_dict,n_iter<span class="op">=</span><span class="dv">5</span>,scoring<span class="op">=</span><span class="st">'roc_auc'</span>,n_jobs<span class="op">=-</span><span class="dv">1</span>,cv<span class="op">=</span><span class="dv">5</span>,verbose<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>rs_model.fit(X_train,y_train)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>rs_model.best_estimator_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<pre><code>When we optimized our parameters and printed the results, we could see that the best values were colsample_bytree = 0.8, gamma = 0.1, max_depth=25, scale_pos_weight = 50, and subsample = 0.7. Following this step, we were able to create our XGBoost Model. Using these parameter values for our XGBoost model demonstrated that the model performed very well on our training set, with a RMSE of 0.068332. However, as this value is so low, this did cause concern for how it could perform on the testing set. Our concerns regarding this model's tendency to overfit were justified as the model's testing RMSE was 2.294, which was far greater than the trainign RMSE of 0.068.</code></pre>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create Model w/ Optimized Parameters</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>reg <span class="op">=</span> xgb.XGBRegressor(base_score<span class="op">=</span><span class="fl">0.5</span>, booster<span class="op">=</span><span class="st">'gbtree'</span>,    </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>                       n_estimators<span class="op">=</span><span class="dv">1000</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>                       early_stopping_rounds<span class="op">=</span><span class="dv">50</span>,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>                       objective<span class="op">=</span><span class="st">'reg:linear'</span>,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>                       colsample_bytree<span class="op">=</span><span class="fl">0.8</span>,</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>                       gamma <span class="op">=</span> <span class="fl">0.1</span>,</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>                       max_depth<span class="op">=</span><span class="dv">25</span>,</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>                       scale_pos_weight<span class="op">=</span><span class="dv">50</span>,</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>                       min_child_weight <span class="op">=</span> <span class="dv">1</span>,</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>                       subsample<span class="op">=</span><span class="fl">0.7</span>,</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>                       learning_rate<span class="op">=</span><span class="fl">0.01</span>)</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>reg.fit(X_train, y_train,</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>        eval_set<span class="op">=</span>[(X_train, y_train), (X_train, y_train)],</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>        verbose<span class="op">=</span><span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="improvements" class="level1">
+<h1>Improvements</h1>
+<pre><code>There are numerous ways we could improve our XGBoost model given the high amount of parameters that could be customized. To experiment with them all would possibly yield better results. Additionally, while RandomizedSearchCV is a great parameter optimization method as it is easy to implement, there are other methods that could prove to be better. 
+
+
+Grid Search is one of those methods as it performs a search for every single combination of parameter values, making it highly accurate. However, this benefit comes with some major drawbacks, including the fact that it is computationally expensive. For a model that has so many parameters and associated values, this was a concern. </code></pre>
+</section>
+<section id="limitations" class="level1">
+<h1>Limitations</h1>
+<pre><code>One of the limitations that was encountered during this was the fact that the dataset included a large number of variables which made it difficult to determine what was relevant in what we wanted to predict.
+
+
+Additionally, time proved to be a major limitation. XGBoost proved to be difficult to experiment with as the large dataset made it slow to run, which in turn limited our ability to tune it and experiment with it more. While RandomizedSearchCV is a great method for hyperparameter tuning, it is based on luck meaning it may have not been the most effective way to optimize these parameters utilized in the model. To combat these limitations, we would use a subsection of the dataset when tuning our model as opposed to using the full dataset for each iteration.
+
+
+The reason we chose XGBoost was because we wanted to gain experience with a model/algorithm that we had never used before. While this was a good learning experience, this in itself did prove to be a limitation as we did not have much time to explore the most effective ways to implement it. If given more time, we may have been able to create a better model.</code></pre>
+</section>
+<section id="kaggle-submission" class="level1">
+<h1>Kaggle Submission</h1>
+<pre><code>With a testing RMSE of 1.611, our Lasso model put us in 148th place out of 183 submissions in the Kaggle competition. Our XGBoost model had a testing RMSE of 2.294, and since this score is worse than the Lasso model's RMSE, the Lasso model ended up being our final submission.</code></pre>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<pre><code>When presented with this challenge, we took what we thought was the most unique approach to the issue. XGBoost was an unfamiliar model for us both. By pursuing this route, we thought this may be interesting to others who took different approaches. This in itself opens up different paths of thinking when approaching a machine learning problem.</code></pre>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
